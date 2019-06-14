@@ -1,10 +1,34 @@
 // ==== Objects ====
 
-/* 
-  Given the following information about dinosaurs, create 3 objects: 
-  Use this pattern to create your objects: 
+/*
+  Given the following information about dinosaurs, create 3 objects:
+  Use this pattern to create your objects:
   object name, diet, weight, length, period
 */
+
+const dino1 = {
+  name: 'tyrannosaurus',
+  diet: 'carnivorous',
+  weight: '7000kg',
+  length: '12m',
+  period: 'Late Cretaceous'
+};
+
+const dino2 = {
+  name: 'stegosaurus',
+  diet: 'herbivorous',
+  weight: '2000kg',
+  length: '9m',
+  period: 'Late Jurassic',
+};
+
+const dino3 = {
+  name: 'velociraptor',
+  diet: 'carnivorous',
+  weight: '15kg',
+  length: '1.8m',
+  period: 'Late Cretaceous',
+};
 
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
 
@@ -15,20 +39,23 @@
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(dino1.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(dino3.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(dino2.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(dino1.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+dino1.roar = () => {
+  return 'RAWERSRARARWERSARARARRRR'
+}
+console.log(dino1.roar());
 
 
 // ==== Arrays ====
@@ -46,24 +73,35 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 {"id":9,"first_name":"Michail","university":"Universidad Católica de Ávila","email":"mrome8@shinystat.com"},
 {"id":10,"first_name":"Hube","university":"Universitat Rovira I Virgili Tarragona","email":"hlethbrig9@foxnews.com"}]
 
-/* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
+/* Request 1: Create a new array called universities that contains all the universities in the graduates array.
 
-Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
-console.log(universities)
+/* Request 2: Create a new array called contactInfo that contains both first name and email of each student.
 
-/* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
-
-The resulting contact information should have a space between the first name and the email information like this: 
+The resulting contact information should have a space between the first name and the email information like this:
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = [];
+const universities = [],
+       contactInfo = [],
+               uni = [],
+       animalNames = [];
+
+
+
+graduates.forEach((element) => {
+    universities.push(element.university);
+    contactInfo.push(element.first_name + ' ' + element.email);
+});
+
+console.log(universities)
 console.log(contactInfo);
+
+// Once you have the new array created, sort the universities alphabetically and log the result. */
+universities.sort()
+console.log(universities)
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
 console.log(uni);
 
 
@@ -88,38 +126,56 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const animalNames = [];
+zooAnimals.forEach((element) => {
+  animalNames.push(`Name: ${element.animal_name}, Scientific: ${element.scientific_name}`);
+});
 console.log(animalNames);
 
-/* Request 2: .map()    
+/* Request 2: .map()
 
 The zoos need a list of all their animal's names (names only, not scientific) converted to lower case.  Create a new array named lowerCase and map over each name to convert them all to lower case.  Log the resut.
 
 */
+// *****QUESTION??**** Why would I set an empty array first before mapping out the new array?
+// const lowerCase = [];
 
-const lowerCase = [];
-console.log(lowerCase); 
+const lowerCase = zooAnimals.map((element) => {
+  return element.animal_name.toLowerCase()
+});
 
-/* Request 3: .filter() 
+console.log(lowerCase);
+
+/* Request 3: .filter()
 
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const lowerPopulation = [];
+
+const lowerPopulation = zooAnimals.filter((element) => {
+  return (element.population < 5) ? element.population : false;
+});
+
 console.log(lowerPopulation);
 
-/* Request 4: .reduce() 
+/* Request 4: .reduce()
 
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+
+const populationTotal = zooAnimals.reduce((accumulator, current) => {
+  if(!accumulator.population) {
+    return accumulator + current.population;
+  } else {
+    return accumulator.population + current.population;
+  }
+});
+
 console.log(populationTotal);
 
-
-/* 
+/*
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
-
+// already made into arrow functions**
