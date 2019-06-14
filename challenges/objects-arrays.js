@@ -22,7 +22,13 @@ const dino2 = {
   period: 'Late Jurassic',
 };
 
-
+const dino3 = {
+  name: 'velociraptor',
+  diet: 'carnivorous',
+  weight: '15kg',
+  length: '1.8m',
+  period: 'Late Cretaceous',
+};
 
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
 
