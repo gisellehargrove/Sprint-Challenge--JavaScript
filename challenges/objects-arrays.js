@@ -84,8 +84,7 @@ Log the result of your new array. */
 const universities = [],
        contactInfo = [],
                uni = [],
-       animalNames = [],
-   populationTotal = 0;
+       animalNames = [];
 
 
 
@@ -163,11 +162,20 @@ console.log(lowerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-console.log(populationTotal);
 
+const populationTotal = zooAnimals.reduce((accumulator, current) => {
+  if(!accumulator.population) {
+    return accumulator + current.population;
+  } else {
+    return accumulator.population + current.population;
+  }
+});
+
+console.log(populationTotal);
 
 /*
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
+// already made into arrow functions**
