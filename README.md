@@ -46,7 +46,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 5. Why do we need super() in an extended class?
 
-    
+
 
 ## Project Set up
 
@@ -76,7 +76,7 @@ Your finished project must include all of the following requirements:
 
 ## Task 1: Objects and Arrays
 Test your knowledge of objects and arrays.
-* [ ] Use the [objects-arrays.js](challenges/objects-arrays.js) link to get started.  Read the instructions carefully!
+* [x] Use the [objects-arrays.js](challenges/objects-arrays.js) link to get started.  Read the instructions carefully!
 
 ## Task 2: Functions
 This challenge takes a look at callbacks and closures as well as scope.
