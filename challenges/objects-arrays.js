@@ -85,7 +85,6 @@ const universities = [],
        contactInfo = [],
                uni = [],
        animalNames = [],
-   lowerPopulation = [],
    populationTotal = 0;
 
 
@@ -152,6 +151,11 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
+
+const lowerPopulation = zooAnimals.filter((element) => {
+  return (element.population < 5) ? element.population : false;
+});
+
 console.log(lowerPopulation);
 
 /* Request 4: .reduce()
