@@ -85,7 +85,6 @@ const universities = [],
        contactInfo = [],
                uni = [],
        animalNames = [],
-         lowerCase = [],
    lowerPopulation = [],
    populationTotal = 0;
 
@@ -139,6 +138,12 @@ console.log(animalNames);
 The zoos need a list of all their animal's names (names only, not scientific) converted to lower case.  Create a new array named lowerCase and map over each name to convert them all to lower case.  Log the resut.
 
 */
+// *****QUESTION??**** Why would I set an empty array first before mapping out the new array?
+// const lowerCase = [];
+
+const lowerCase = zooAnimals.map((element) => {
+  return element.animal_name.toLowerCase()
+});
 
 console.log(lowerCase);
 
