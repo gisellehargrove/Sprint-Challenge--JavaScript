@@ -6,6 +6,9 @@
   * The last parameter accepts a callback
   * In the body of the function return the callback with the two parameters that you created
 */
+function consume(param1, param2, cb) {
+  cb(param1, param2);
+}
 
 
 /* Step 2: Create several functions to callback with consume();
@@ -28,7 +31,7 @@
 // Explanation:
 
 //This is also an example of how you are able to access the window object from your created functions in the browser.
-//Your inner scope aka nestedFunction is able to access variables in the outer scope. 
+//Your inner scope aka nestedFunction is able to access variables in the outer scope.
 
 
 const external = "I'm outside the function";
